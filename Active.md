@@ -68,12 +68,11 @@ get Groups.xml
 
 # Advanced: Targeted Recursive Downloading (e.g., pulling all XMLs, and check cpassword)
 lcd /home/kali/loot  # Change LOCAL directory where files will be saved
+mask "*.xml"         # Only look for .xml files
 recurse ON           # Turn on recursive searching
 prompt OFF           # Don't ask for confirmation for every single file
 mget *               # Download everything matching the mask
-
-# Filter
-mask "*.xml"         # Only look for .xml files
+mask "*"             # reset mask at the end.
 
 # With the folder context
 smbclient //10.10.10.100/Replication -N -D 'active.htb\Policies' -Tc /home/kali/loot/policies.tar '*'
