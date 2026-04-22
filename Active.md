@@ -66,7 +66,7 @@ more Groups.xml
 # Download a single file
 get Groups.xml
 
-# Advanced: Targeted Recursive Downloading (e.g., pulling all XMLs)
+# Advanced: Targeted Recursive Downloading (e.g., pulling all XMLs, and check cpassword)
 lcd /home/kali/loot  # Change LOCAL directory where files will be saved
 mask "*.xml"         # Only look for .xml files
 recurse ON           # Turn on recursive searching
