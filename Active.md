@@ -16,6 +16,12 @@ nmap -p- --min-rate=10000 -oA allports <IP>
 
 # 2. Targeted script and version scan on the discovered ports
 nmap -p <Found_Ports> -sC -sV -oA targeted <IP>
+
+# lot of nmap results
+nmap -p- --min-rate=10000 -oA allports <IP>
+ports=$(grep -oP '\d+/open' allports.gnmap | cut -d/ -f1 | paste -sd, -)
+echo $ports
+nmap -sC -sV -p$ports -oA targeted <IP>
 ```
 
 ---
