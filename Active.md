@@ -74,8 +74,6 @@ prompt OFF           # Don't ask for confirmation for every single file
 mget *               # Download everything matching the mask
 ```
 
----
-
 On an AD target, if you can read a policy-related share, your default search pattern is:
 
 ```
@@ -92,6 +90,8 @@ ScheduledTasks
 Drives
 DataSources
 ```
+
+---
 
 ### Phase 4: Credential Extraction (Group Policy Preferences)
 *If you find a `Groups.xml`, `Services.xml`, `ScheduledTasks.xml`, or `Drives.xml` file, look for the `cpassword` string. This is encrypted with a known Microsoft key.*
