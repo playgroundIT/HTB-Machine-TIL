@@ -77,6 +77,12 @@ mask "*.xml"         # Only look for .xml files
 
 ```
 
+```
+# Search Locally further
+grep -Rni 'cpassword' /home/kali/loot/policies_xml
+find /home/kali/loot/policies_xml -type f | grep -Ei 'Groups\.xml|Services\.xml|ScheduledTasks\.xml|Drives\.xml'
+```
+
 On an AD target, if you can read a policy-related share, your default search pattern is:
 
 ```
