@@ -115,6 +115,13 @@ gpp-decrypt '<cpassword_string_here>'
 
 # Example:
 gpp-decrypt 'edBSHOwhZLTjt/QS9FeIcJ83mjWA98gw9guKOhJOdcqh+ZGMeXOsQbCpZ3xUjTLfCuNH8pG5aSVYdYw/NglVmQ'
+
+# If there is no gpp-decrypt
+
+cd /opt
+sudo git clone https://github.com/t0thkr1s/gpp-decrypt.git
+cd gpp-decrypt
+python3 gpp-decrypt.py -f /home/yeachan/loot/{31B2F340-016D-11D2-945F-00C04FB984F9}/MACHINE/Preferences/Groups/Groups.xml
 ```
 
 ---
